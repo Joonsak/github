@@ -8,6 +8,7 @@ public class githubtehtava {
 		String name = "Emma";
 		String guess;
 		System.out.println("Guess my name!");
+		int tries = 0;
 
 	do
 	{
@@ -20,8 +21,16 @@ public class githubtehtava {
 			break;
 		}
 		System.out.println("Guess again. (kirjoita: loppu, niin ohjelma sammuu.");
+		tries++;
+		if(name.length()>=tries) {
+			System.out.println("Hint: "+ name.substring(0,tries));
+		}else {
+			System.out.println("Hint: "+name.substring(0, name.length()));
+		}
 	}while(!name.equals(guess));
 	
-	}
+	System.out.println("You guessed this many "+ tries+" times.");
+	
+	}	
 
 }
